@@ -1,6 +1,6 @@
-# Claude Skills — Obsidian Learning System
+# claude-skills-obsidian-knowledge-system
 
-A set of [Claude Code](https://claude.ai/claude-code) skills for building a personal knowledge system with Obsidian, Anki, and various learning sources.
+Claude skills for boosting Obsidian experience as a knowledge hub.
 
 ## Skills
 
@@ -69,7 +69,7 @@ A 5-stage post-reading reflection workflow, all within a single Obsidian note.
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-skills.git
+git clone https://github.com/YOUR_USERNAME/claude-skills-obsidian-knowledge-system.git
 cd claude-skills
 chmod +x install.sh
 ./install.sh
