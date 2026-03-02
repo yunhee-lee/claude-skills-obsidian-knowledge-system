@@ -69,8 +69,8 @@ A 5-stage post-reading reflection workflow, all within a single Obsidian note.
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-skills-obsidian-knowledge-system.git
-cd claude-skills
+git clone https://github.com/yunhee-lee/claude-skills-obsidian-knowledge-system.git
+cd claude-skills-obsidian-knowledge-system
 chmod +x install.sh
 ./install.sh
 ```
