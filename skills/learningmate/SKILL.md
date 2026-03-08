@@ -1,7 +1,7 @@
 ---
 description: Learning companion for a Data Analyst & Data Group Lead. Recommends high-leverage topics, generates atomic notes, creates Anki flashcards, expands questions into broader learning themes, and processes Obsidian vault notes.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
-user-invocable: true
+user-invokable: true
 ---
 
 # A. Role
