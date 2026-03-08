@@ -28,14 +28,15 @@ fi
 # 2. Select skills to install
 echo ""
 echo "Skills available:"
-echo "  1) learningmate         — Obsidian atomic notes + Anki cards"
-echo "  2) knowledge-summarizer — YouTube / Web / PDF → Report → learningmate"
-echo "  3) book-reflection      — 5-stage post-reading reflection"
+echo "  1) learningmate           — Obsidian atomic notes + Anki cards"
+echo "  2) knowledge-summarizer   — YouTube / Web / PDF → Report → learningmate"
+echo "  3) book-reflection        — 5-stage post-reading reflection"
+echo "  4) contents-recommender   — recommend KB notes / books / web / YouTube for a query"
 echo ""
-read -p "Which skills to install? (e.g. 1 2 3, or press Enter for all): " SELECTION
+read -p "Which skills to install? (e.g. 1 2 3 4, or press Enter for all): " SELECTION
 
 if [ -z "$SELECTION" ]; then
-  SKILLS=("learningmate" "knowledge-summarizer" "book-reflection")
+  SKILLS=("learningmate" "knowledge-summarizer" "book-reflection" "contents-recommender")
 else
   SKILLS=()
   for num in $SELECTION; do
@@ -43,6 +44,7 @@ else
       1) SKILLS+=("learningmate") ;;
       2) SKILLS+=("knowledge-summarizer") ;;
       3) SKILLS+=("book-reflection") ;;
+      4) SKILLS+=("contents-recommender") ;;
       *) echo "Unknown option: $num — skipping" ;;
     esac
   done
@@ -80,6 +82,7 @@ echo "Tips:"
 echo "  - Run '/learningmate' to start the learning companion"
 echo "  - Run '/knowledge-summarizer <URL or PDF path>' to ingest content"
 echo "  - Run '/book-reflection init \"Title\" \"Author\"' to start a book reflection"
+echo "  - Run '/contents-recommender [키워드]' to get content recommendations"
 echo ""
 echo "Personalization (edit the installed SKILL.md files):"
 echo "  - learningmate: update the User profile, focus domains, and Anki deck names"

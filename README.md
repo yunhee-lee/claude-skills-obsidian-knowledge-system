@@ -57,6 +57,22 @@ A 5-stage post-reading reflection workflow, all within a single Obsidian note.
 
 ---
 
+### `contents-recommender`
+Recommends the most relevant learning content for a given question, problem, or curiosity — searching your KB, books, the web, and YouTube in priority order.
+
+- Searches your Obsidian vault (inbox, notes, knowledge) first
+- Checks owned book chapters via `Book Reference List.md`
+- Falls back to web and YouTube search, respecting saved preferences
+- Saves results to `0️⃣ Inbox/(Recommendation) 키워드.md`
+
+**Usage:**
+```
+/contents-recommender 카프카 스트리밍
+/contents-recommender 팀 성과 측정 어떻게 해야 할지 모르겠어
+```
+
+---
+
 ## Requirements
 
 - [Claude Code](https://claude.ai/claude-code) CLI
@@ -76,6 +92,31 @@ chmod +x install.sh
 ```
 
 The installer will ask for your Obsidian vault path and copy the skill files to `~/.claude/skills/`, replacing the `{{VAULT_PATH}}` placeholder with your actual vault path.
+
+### Installing a single skill
+
+**Option A — interactive installer (select by number):**
+```bash
+git clone https://github.com/yunhee-lee/claude-skills-obsidian-knowledge-system.git
+cd claude-skills-obsidian-knowledge-system
+chmod +x install.sh
+./install.sh
+# When prompted, enter only the number(s) you want, e.g. "4" for contents-recommender
+```
+
+**Option B — download one file directly:**
+```bash
+SKILL=contents-recommender   # change to the skill you want
+VAULT=/path/to/your/vault    # change to your actual vault path
+
+mkdir -p ~/.claude/skills/$SKILL
+curl -sSL \
+  https://raw.githubusercontent.com/yunhee-lee/claude-skills-obsidian-knowledge-system/main/skills/$SKILL/SKILL.md \
+  | sed "s|{{VAULT_PATH}}|$VAULT|g" \
+  > ~/.claude/skills/$SKILL/SKILL.md
+```
+
+Available skill names: `learningmate`, `knowledge-summarizer`, `book-reflection`, `contents-recommender`
 
 ### Allowed tools (optional but recommended)
 
